@@ -81,14 +81,14 @@ const getAllVideos = asyncHandler(async (req: Request, res: Response) => {
     userId,
   } = req.query;
 
-  if (!userId) {
-    throw new apiError(400, "userId is required", []);
-  }
+  // if (!userId) {
+  //   throw new apiError(400, "userId is required", []);
+  // }
 
-  const existedUser = await User.findById(userId);
-  if (!existedUser) {
-    throw new apiError(404, "User not found", []);
-  }
+  // const existedUser = await User.findById(userId);
+  // if (!existedUser) {
+  //   throw new apiError(404, "User not found", []);
+  // }
 
   const pageNumber = parseInt(page as string, 10);
   const limitNumber = parseInt(limit as string, 10);

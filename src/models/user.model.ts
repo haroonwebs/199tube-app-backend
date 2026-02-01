@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema<IUser>(
     },
     fullName: {
       type: String,
-      required: true,
+      required: false,
       unique: true,
       trim: true,
     },
