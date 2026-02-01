@@ -12,7 +12,7 @@ const port = process.env.PORT || 4000;
 app.use(express.json({ limit: "16kb" }));
 app.use(
   cors({
-    origin: "https://199tube-intertainment.vercel.app",
+    origin: process.env.ALLOW_FRONTEND_ORIGIN,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // allow these methods
     allowedHeaders: ["Content-Type", "Authorization", "Accept"],
