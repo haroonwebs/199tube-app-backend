@@ -12,10 +12,15 @@ const port = process.env.PORT || 4000;
 app.use(express.json({ limit: "16kb" }));
 app.use(
   cors({
-    origin: process.env.ALLOW_FRONTEND_ORIGIN,
+    origin: "https://199tube-intertainment.vercel.app",
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+// handle preflight
+app.options("*", cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static("public"));
