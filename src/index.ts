@@ -11,7 +11,7 @@ const port = process.env.PORT || 4000;
 
 app.use(
   cors({
-    origin: "https://199tube-intertainment.vercel.app",
+    origin: process.env.ALLOW_FRONTEND_ORIGIN,
     credentials: true,
   })
 );
