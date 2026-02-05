@@ -10,7 +10,7 @@ const toggleSubscription = asyncHandler(async (req: Request, res: Response) => {
   const { channelId } = req.params;
   const myId = (req as any).user?._id;
   if (!isValidObjectId(channelId)) {
-    throw new apiError(401, "channelId is not valid");
+    throw new apiError(400, "channelId is not valid");
   }
   if (myId.toString() === channelId) {
     throw new apiError(400, "You cannot subscribe to your own channel");
