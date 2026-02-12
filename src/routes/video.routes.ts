@@ -12,7 +12,7 @@ import {
 } from "../controllers/video.controller";
 
 const router = Router();
-// router.use(authenticateUser);
+router.use(authenticateUser);
 router.route("/publishVideo").post(
   fileUpload.fields([
     {

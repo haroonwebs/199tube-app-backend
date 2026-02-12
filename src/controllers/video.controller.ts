@@ -51,14 +51,8 @@ const publishVideo = asyncHandler(async (req: Request, res: Response) => {
   const duration = Math.floor(videoFile.duration);
 
   const video = await Video.create({
-    videoFile: {
-      url: videoFile.secure_url,
-      public_id: videoFile.public_id,
-    },
-    thumbnail: {
-      url: thumbnail.secure_url,
-      public_id: thumbnail.public_id,
-    },
+    videoFile: videoFile.secure_url,
+    thumbnail: thumbnail.secure_url,
     title,
     description,
     duration,
